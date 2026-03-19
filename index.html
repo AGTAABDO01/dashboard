@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delivery Service</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#f6f6f6}
+
+/* Header */
+header{background:#ff6b35;color:white;text-align:center;padding:20px}
+
+/* Nav */
+nav{background:#222;text-align:center;padding:10px}
+nav a{color:white;margin:10px;text-decoration:none}
+
+/* Hero (motorcycle speed effect) */
+.hero{
+background:url('abi2.png') center/cover no-repeat;
+height:350px;
+display:flex;
+align-items:center;
+justify-content:center;
+color:white;
+text-align:center
+}
+.hero h2{
+background:rgba(226, 85, 4, 0.6);
+padding:20px;
+border-radius:10px
+}
+
+/* Sections */
+.container{padding:30px}
+.section-title{margin-top:40px}
+
+/* Cards */
+.foods{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+
+.card{
+background:rgb(221, 209, 209);
+border-radius:10px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+padding:10px;
+text-align:center
+}
+.card img{
+width:100%;
+height:150px;
+object-fit:cover;
+border-radius:10px
+}
+
+button{
+background:#25D366;
+color:white;
+border:none;
+padding:10px 15px;
+border-radius:20px;
+cursor:pointer
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h1>🏍️ Speed Delivery Service</h1>
+<p>Fast delivery like the wind </p>
+</header>
+
+<nav>
+<a href="#fast">Fast Food</a>
+<a href="#local">Local Food</a>
+<a href="#pharmacy">Pharmacy</a>
+<a href="#grocery">Grocery</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<h2>🏍️ Super Fast Motorcycle Delivery </h2>
+</section>
+
+<div class="container">
+
+<!-- 🍔 Fast Food -->
+<h2 id="fast" class="section-title">🍔 Fast Food</h2>
+<div class="foods">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd">
+<h3>Burger - $5</h3>
+<button onclick="order('Burger',5)">Order</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1513104890138-7c749659a591">
+<h3>Pizza - $8</h3>
+<button onclick="order('Pizza',8)">Order</button>
+</div>
+
+</div>
+
+<!-- 🍲 Local Food -->
+<h2 id="local" class="section-title">🍲 Local Food</h2>
+<div class="foods">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d">
+<h3>other moroccan foods</h3>
+<button onclick="order('other moroccan foods)">Order</button>
+</div>
+
+
+
+</div>
+
+<!-- 💊 Pharmacy -->
+<h2 id="pharmacy" class="section-title">💊 Pharmacy</h2>
+<div class="foods">
+
+<div class="card">
+<img src="abi1.png">
+<h3>Sedatives & Medications</h3>
+<button onclick="order('Sedatives & Medications المهدئات والأدوية',3)">Order</button>
+</div>
+
+
+
+</div>
+
+<!-- 🛒 Grocery -->
+<h2 id="grocery" class="section-title">🛒 Grocery</h2>
+<div class="foods">
+
+<div class="card">
+<img src="abi.png">
+<h3> Grocery & Other Products </h3>
+<button onclick="order('Grocery & Other Products',2)">Order</button>
+</div>
+
+
+
+</div>
+
+</div>
+
+<script>
+function order(item, price){
+    let phone = "212601614345";
+
+    let message = "🚚 Order Request:\n\nItem: " + item + "\nPrice: $" + price;
+
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
